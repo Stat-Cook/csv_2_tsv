@@ -25,4 +25,5 @@ To improve usability three optional flags are included for quality of life:
 *  `-r` - file format to **read** in (e.g. *xlsx*, *csv*, *xlsb*)
 *  `-w` - file format to **write** out (e.g. *xlsx*, *csv*, *xlsb*)
 *  `-n` - **new** data directory to write to, preserving folder structure
+*  `-v` - run in **verbose** mode such that file names are logged to screen during conversion
 
