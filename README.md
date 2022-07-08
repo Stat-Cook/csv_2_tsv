@@ -16,7 +16,7 @@ Then from the command line, the command:
 csv_2_tsv [root] 
 ```
 
-will convert all *.csv* files found at *root*, and in nested sub-directories, will have a *.tsv* version produced.  
+will convert all *.csv* files found at *root*, and in nested sub-directories, to *.tsv* files.  
 
 ### Optional flags
 
