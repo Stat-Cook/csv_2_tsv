@@ -19,3 +19,6 @@ writer_dict = {
     ".xlsb": lambda data, path: data.to_excel(path),
     ".xlsx": lambda data, path: data.to_excel(path)
 }
+
+def main():
+    print("test")

@@ -25,6 +25,7 @@ class FilePath(UserString):
         """
 
         self.file, self.file_ext = os.path.splitext(file_path)
+        self.file_ext = self.file_ext.lower()
         super().__init__(file_path)
 
         self._write_ext = write_ext

@@ -43,7 +43,7 @@ def convert_spider(crawler_root: str = ".",
     walk = os.walk(crawler_root)
 
     for root, _, files in walk:
-        data_files = [i for i in files if i.endswith(read_ext)]
+        data_files = [i for i in files if i.lower().endswith(read_ext)]
 
         if data_files and new_data_dir:
             new_root = os.path.join(new_data_dir, root)
