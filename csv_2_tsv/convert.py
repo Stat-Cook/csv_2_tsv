@@ -4,7 +4,7 @@ Implementation of conversion (read -> write) of a single data file.
 import os
 
 from .file_path import FilePath
-
+import logging as log
 
 def convert(file: str, write_ext: str = ".tsv", new_data_dir=None):
     """
@@ -22,10 +22,15 @@ def convert(file: str, write_ext: str = ".tsv", new_data_dir=None):
     Returns:
         FilePath
     """
+
     new_data_dir = new_data_dir or ""
 
     file_path = FilePath(file, write_ext)
-    data = file_path.reader(file)
+    try:
+        data = file_path.reader(file)
+    except UnicodeDecodeError:
+        log.warning(f"Unicode Error for file {file}, error supressed.")
+        data = file_path.reader(file, encoding_errors="ignore")
 
     if isinstance(data, dict):
         for sheet, data in data.items():
